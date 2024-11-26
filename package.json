@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.1.0",
+    "@openzeppelin/contracts": "^4.8.0",
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "@types/web3": "^1.2.2",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "web3": "^4.15.0"
   },
   "devDependencies": {
     "@types/node": "^20",
