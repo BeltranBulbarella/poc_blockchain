@@ -44,7 +44,8 @@ contract SupplyChain is AccessControl {
         _;
     }
 
-    // Function to create a new product
+
+// Function to create a new product
     function createProduct(string memory _productID, string memory _origin) public onlyRole(SUPPLIER_ROLE) {
         require(bytes(_productID).length > 0, "Product ID is required");
         require(bytes(_origin).length > 0, "Origin is required");

@@ -100,6 +100,7 @@ poc_blockchain/
 2. **Install Dependencies**
    ```bash
    npm install
+   npm i truffle
    ```
 
 3. **Compile Smart Contracts**

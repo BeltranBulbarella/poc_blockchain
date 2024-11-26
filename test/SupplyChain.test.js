@@ -1,7 +1,7 @@
-const SupplyChain = artifacts.require("SupplyChain");
+const SupplyChain = artifacts.require("supplyChain");
 const { expectRevert } = require('@openzeppelin/test-helpers');
 
-contract("SupplyChain", accounts => {
+contract("supplyChain", accounts => {
     const [admin, supplier, manufacturer, logistics, retailer, consumer, unauthorized] = accounts;
 
     let supplyChain;
