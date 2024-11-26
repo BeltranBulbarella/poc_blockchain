@@ -123,5 +123,19 @@ contract SupplyChain is AccessControl {
     function assignRole(bytes32 role, address account) public onlyRole(DEFAULT_ADMIN_ROLE) {
         grantRole(role, account);
     }
+
+    function getProductAtIndex(uint256 index) public view returns (string memory) {
+        require(index < productList.length, "Index out of bounds");
+        return productList[index];
+    }
+
+    function getProductCount() public view returns (uint256) {
+        return productList.length;
+    }
+
+    function getProductList() public view returns (string[] memory) {
+        return productList;
+    }
+
 }
 
