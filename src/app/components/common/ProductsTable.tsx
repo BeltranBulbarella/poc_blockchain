@@ -13,7 +13,7 @@ import {
     Typography
 } from "@mui/material";
 import {useProductStore} from "@/app/utils/useProductStore";
-import ProductModal from "@/app/components/common/ProductModal";
+import ProductModal from "@/app/components/common/modals/ProductModal";
 
 const LoadingSkeleton = () => (
     <Box sx={{height: "max-content"}}>

@@ -116,6 +116,7 @@ poc_blockchain/
     - Deploy contracts:
     ```bash
     truffle migrate --reset
+   truffle exec scripts/addProducts.js
       ```
 
 ## **Smart Contracts**

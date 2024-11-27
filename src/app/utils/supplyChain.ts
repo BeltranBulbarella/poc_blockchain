@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import SupplyChain from "../../../build/contracts/SupplyChain.json";
 
-export const CONTRACT_ADDRESS = "0x2d5d1423a510a4461442f8f68E8985563e554258"; // TODO: Replace with your contract address
+export const CONTRACT_ADDRESS = "0x3Cd77FD0C12D4d5dB8aDEc83E5446dCa32fb8c81"; // TODO: Replace with your contract address
 export const ABI = SupplyChain.abi;
 
 export const LOCAL_RPC_URL = "http://127.0.0.1:8545";
