@@ -36,25 +36,37 @@ module.exports = async function (callback) {
         const productTransitions = [
             {
                 productID: "product_supplier",
+                productName: "Widget A", // New field
                 origin: "USA",
+                location: "New York",  // New field
+                actor: "Supplier Inc.", // New field
                 transitions: ["Created"],
                 role: "SUPPLIER_ROLE",
             },
             {
                 productID: "product_manufacturer",
+                productName: "Gadget B",
                 origin: "Germany",
+                location: "Berlin",
+                actor: "Manufacturing GmbH",
                 transitions: ["Created", "Manufactured"],
                 role: "MANUFACTURER_ROLE",
             },
             {
                 productID: "product_logistics",
+                productName: "Device C",
                 origin: "Japan",
+                location: "Tokyo",
+                actor: "Logistics Co.",
                 transitions: ["Created", "Manufactured", "In Transit"],
                 role: "LOGISTICS_ROLE",
             },
             {
                 productID: "product_retailer",
+                productName: "Tool D",
                 origin: "France",
+                location: "Paris",
+                actor: "Retailer SA",
                 transitions: ["Created", "Manufactured", "In Transit", "Available for Sale"],
                 role: "RETAILER_ROLE",
             },
@@ -65,9 +77,14 @@ module.exports = async function (callback) {
             console.log(`Processing product: ${product.productID}`);
 
             // Create the product
-            await supplyChain.createProduct(product.productID, product.origin, {
-                from: roleAccounts.SUPPLIER_ROLE,
-            });
+            await supplyChain.createProduct(
+                product.productID,
+                product.productName,
+                product.origin,
+                product.location,
+                product.actor,
+                { from: roleAccounts.SUPPLIER_ROLE }
+            );
             console.log(`Product created: ${product.productID}, Origin: ${product.origin}`);
 
             // Process each state transition
@@ -79,9 +96,13 @@ module.exports = async function (callback) {
                 else if (status === "Available for Sale") requiredRole = "RETAILER_ROLE";
 
                 if (requiredRole) {
-                    await supplyChain.updateStatus(product.productID, status, {
-                        from: roleAccounts[requiredRole],
-                    });
+                    await supplyChain.updateStatus(
+                        product.productID,
+                        status,
+                        product.location,
+                        product.actor,
+                        { from: roleAccounts[requiredRole] }
+                    );
                     console.log(`Product updated: ${product.productID}, Status: ${status}`);
                 }
             }
@@ -93,4 +114,5 @@ module.exports = async function (callback) {
         callback(error);
     }
 };
+
 

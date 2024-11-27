@@ -25,11 +25,14 @@ export const fetchProducts = async () => {
         for (let i = 0; i < productCount; i++) {
             const productID = await contract.getProductAtIndex(i);
             const product = await contract.getProduct(productID);
+            console.log("Product:", product);
             productList.push({
                 productID: product[0],
                 origin: product[1],
                 currentHolder: product[2],
                 status: product[3],
+                productName: product[4],
+                actor: product[5],
             });
         }
 

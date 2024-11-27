@@ -12,6 +12,9 @@ interface AppState {
     contractAddress: string;
     adminWallet: string;
     rolesLoading: boolean;
+    name: string;
+    setName: (name: string) => void;
+    logout: () => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -61,4 +64,7 @@ export const useAppStore = create<AppState>((set) => ({
     contractAddress: CONTRACT_ADDRESS,
     adminWallet: "",
     rolesLoading: false,
+    name: "",
+    setName: (name) => set({name}),
+    logout: () => set({name: "", selectedRole: null}),
 }));
