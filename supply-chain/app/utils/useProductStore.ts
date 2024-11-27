@@ -72,9 +72,23 @@ export const useProductStore = create<ProductStore>((set) => ({
             const tx = await contract.createProduct(product.productID, product.productName, product.origin, product.location, product.actor);
             await tx.wait();
             set({productsFetched: false});
+            toast({
+                title: "Transaction Submitted",
+                description: `Product created}`,
+                variant: 'success',
+                className: "bg-green-100 text-green-800",
+                position: 'top'
+            })
             await fetchProducts();
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error creating product:", error);
+            toast({
+                title: "Transaction Failed",
+                description: `Error updating product status: ${error.message}`,
+                variant: 'destructive',
+                className: "bg-red-100 text-red-800",
+                position: 'top'
+            })
         }
     },
     getProductHistory: async (product) => {
