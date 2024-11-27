@@ -35,11 +35,6 @@ const UpdateProductStatusModal: React.FC<UpdateProductStatusModalProps> = ({open
         setOldStatus(determinedOldStatus);
         setNewStatus(determinedNewStatus);
 
-        console.log({
-            determinedOldStatus,
-            determinedNewStatus,
-            products,
-        });
     }, [selectedRole, products]);
 
     const handleUpdateStatus = () => {

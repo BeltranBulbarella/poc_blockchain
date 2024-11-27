@@ -41,7 +41,6 @@ export const useAppStore = create<AppState>((set) => ({
                 RETAILER_ROLE: accounts[4],
                 CONSUMER_ROLE: accounts[5],
             };
-            console.log('role account', roleAccounts)
             //
             // for (const [role, account] of Object.entries(roleAccounts)) {
             //     // @ts-ignore

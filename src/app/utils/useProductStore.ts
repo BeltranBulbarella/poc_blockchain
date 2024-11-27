@@ -73,7 +73,6 @@ export const useProductStore = create<ProductStore>((set) => ({
             const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
             const history = await contract.getProductHistory(product);
             set({productHistory: history});
-            console.log("Product history:", history);
         } catch (error) {
             console.error("Error fetching product history:", error);
         }
