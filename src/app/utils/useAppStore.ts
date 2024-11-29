@@ -1,6 +1,6 @@
 import {create} from "zustand";
 import { ethers } from "ethers";
-import {ABI, CONTRACT_ADDRESS, LOCAL_RPC_URL} from "@/app/utils/supplyChain";
+import {CONTRACT_ADDRESS, LOCAL_RPC_URL} from "@/app/utils/supplyChain";
 import {RolesEnum} from "@/app/utils/Enums";
 
 interface AppState {

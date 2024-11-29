@@ -14,7 +14,7 @@ import {useProductStore} from "@/app/utils/useProductStore";
 export const Dashboard = () => {
     const [activeTab, setActiveTab] = useState('tracking')
     const {productsFetched, fetchProducts, products} = useProductStore();
-    const {name, roles, selectedRole, fetchedRoles, setRoles, logout} = useAppStore();
+    const {name, selectedRole, fetchedRoles, setRoles, logout} = useAppStore();
     const router = useRouter()
 
     useEffect(() => {

@@ -113,6 +113,11 @@ poc_blockchain/
     ```bash
     garnache-cli
     ```
+   -  To use the same wallets use the mnemonic tag
+    ```bash
+    ganache-cli --mnemonic "crane earth decrease march gas income hold debate powder salt spider discover"
+    ```
+   
     - Deploy contracts:
     ```bash
     truffle migrate --reset

@@ -21,7 +21,6 @@ export function TransactionSubmission({selectedRole}: TransactionSubmissionProps
         location: '',
         actor: ''
     })
-    const {toast} = useToast()
     const {createProduct, updateProductStatus} = useProductStore();
     const {roles} = useAppStore();
     const handleSubmit = async (e: React.FormEvent) => {

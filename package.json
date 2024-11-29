@@ -9,13 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
     "@metamask/detect-provider": "^2.0.0",
     "@metamask/providers": "^18.1.1",
-    "@mui/icons-material": "^6.1.8",
-    "@mui/material": "^6.1.8",
-    "@mui/x-data-grid": "^7.22.3",
     "@openzeppelin/contracts": "^4.8.0",
     "@openzeppelin/test-helpers": "^0.5.16",
     "dotenv": "^16.4.5",
