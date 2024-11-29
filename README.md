@@ -32,7 +32,7 @@ poc_blockchain/
 ├── migrations/
 │   ├── 1_initial_migration.js
 │   └── 3_deploy_supplychain.js
-├── src/
+├── supply-chain/
 │   ├── components/
 │   ├── pages/
 │   └── utils/
